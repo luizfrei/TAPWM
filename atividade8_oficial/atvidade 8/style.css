@@ -1,0 +1,69 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="number"],
+select {
+    width: calc(100% - 20px); /* Ajuste na largura para lidar com a margem padrão do input */
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+span {
+    font-weight: bold;
+}
+
+/* Estilo para os resultados da pesquisa */
+.resultados {
+    margin-top: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    overflow: auto; /* Para permitir que a caixa de resultados role se o conteúdo for maior que o contêiner */
+}
+
+/* Ajuste no alinhamento da label */
+label {
+    display: inline-block; /* Alterado de block para inline-block para melhor alinhamento */
+    vertical-align: top; /* Alinhar a label com o topo do input */
+    width: 30%; /* Definir uma largura para a label */
+    margin-bottom: 10px; /* Ajuste na margem inferior para separação entre as labels e os inputs */
+}
+
+/* Outros estilos permanecem os mesmos */

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pesquisa de Opinião</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Pesquisa de Opinião</h1>
+ 
+<form id="pesquisaForm">
+Idade: <input type="number" id="idade"><br>
+Sexo:
+<input type="radio" name="sexo" value="feminino"> Feminino
+<input type="radio" name="sexo" value="masculino"> Masculino<br>
+Opinião:
+<select id="opiniao">
+<option value="4">Ótimo</option>
+<option value="3">Bom</option>
+<option value="2">Regular</option>
+<option value="1">Péssimo</option>
+</select><br>
+<button type="button" onclick="adicionarResposta()">Adicionar Resposta</button>
+</form>
+ 
+<h2>Resultados da Pesquisa:</h2>
+<p>Média de idade: <span id="mediaIdade"></span></p>
+<p>Idade da pessoa mais velha: <span id="idadeMaisVelha"></span></p>
+<p>Idade da pessoa mais nova: <span id="idadeMaisNova"></span></p>
+<p>Quantidade de pessoas que responderam péssimo: <span id="qtdPessimo"></span></p>
+<p>Porcentagem de pessoas que responderam ótimo e bom: <span id="porcentagemOtimoBom"></span>%</p>
+<p>Número de mulheres que responderam ao questionário: <span id="qtdMulheres"></span></p>
+<p>Número de homens que responderam ao questionário: <span id="qtdHomens"></span></p>
+ 
+<script src="script.js"></script>
+</body>
+</html>
