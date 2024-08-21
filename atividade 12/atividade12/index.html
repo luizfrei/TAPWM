@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 12</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            box-sizing: border-box;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e7f4e4;
+            border: 1px solid #d4e1d4;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Cálculos com Três Números</h1>
+        <form id="formulario">
+            <label for="numero1">Número 1:</label>
+            <input type="number" id="numero1" required>
+            <br>
+            <label for="numero2">Número 2:</label>
+            <input type="number" id="numero2" required>
+            <br>
+            <label for="numero3">Número 3:</label>
+            <input type="number" id="numero3" required>
+            <br>
+            <button type="button" onclick="calcular()">Calcular</button>
+        </form>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function calcularValores(array) {
+            if (array.length !== 3) {
+                throw new Error("O array deve conter exatamente três números.");
+            }
+
+            // Função auxiliar para calcular a soma
+            function somar(a, b, c) {
+                return a + b + c;
+            }
+
+            // Função auxiliar para calcular o quadrado de um número
+            function quadrado(x) {
+                return x * x;
+            }
+
+            // Usando apply para passar os valores para a função somar
+            const soma = somar.apply(null, array);
+            
+            // Calculando o quadrado do primeiro e do segundo número
+            const quadradoPrimeiro = quadrado(array[0]);
+            const quadradoSegundo = quadrado(array[1]);
+
+            // Formatando a saída
+            return `A soma dos três números é ${soma}, o quadrado do primeiro é ${quadradoPrimeiro}, e o quadrado do segundo é ${quadradoSegundo}.`;
+        }
+
+        function calcular() {
+            // Pegando os valores dos campos de entrada
+            const num1 = parseFloat(document.getElementById('numero1').value);
+            const num2 = parseFloat(document.getElementById('numero2').value);
+            const num3 = parseFloat(document.getElementById('numero3').value);
+
+            // Verificando se os valores são números válidos
+            if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+                document.getElementById('resultado').innerText = 'Por favor, insira três números válidos.';
+                return;
+            }
+
+            // Criando o array com os números e calculando os valores
+            const numeros = [num1, num2, num3];
+            const resultado = calcularValores(numeros);
+
+            // Exibindo o resultado
+            document.getElementById('resultado').innerText = resultado;
+        }
+    </script>
+</body>
+</html>
