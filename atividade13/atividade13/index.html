@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Objetos em JavaScript</title>
+</head>
+<body>
+    <h1>Exemplo de Criação e Atribuição de Objetos em JavaScript</h1>
+    <script>
+        // Forma 1: Usando a notação de objeto literal
+        const Aluno1 = {
+            RA: '123456789',
+            Nome: 'João Silva'
+        };
+
+        alert('Forma 1: Usando a notação de objeto literal\n' + JSON.stringify(Aluno1, null, 2));
+
+        // Forma 2: Criando o objeto vazio e adicionando propriedades posteriormente
+        const Aluno2 = {};
+
+        Aluno2.RA = '987654321';
+        Aluno2.Nome = 'Maria Oliveira';
+
+        alert('Forma 2: Criando o objeto vazio e adicionando propriedades\n' + JSON.stringify(Aluno2, null, 2));
+
+        // Forma 3: Usando Object.defineProperty para definir as propriedades
+        const Aluno3 = {};
+
+        Object.defineProperty(Aluno3, 'RA', {
+            value: '112233445',
+            writable: true,
+            enumerable: true,
+            configurable: true
+        });
+
+        Object.defineProperty(Aluno3, 'Nome', {
+            value: 'Pedro Santos',
+            writable: true,
+            enumerable: true,
+            configurable: true
+        });
+
+        alert('Forma 3: Usando Object.defineProperty\n' + JSON.stringify(Aluno3, null, 2));
+    </script>
+</body>
+</html>
