@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janela Interativa</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #janela {
+            width: 200px;
+            height: 200px;
+            background-image: url('janela_fechada.png');
+            background-size: cover;
+            position: relative;
+            cursor: pointer;
+        }
+        #status {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="status">Janela Fechada</h1>
+    <div id="janela" onmouseover="abrirJanela()" onmouseout="fecharJanela()" onclick="quebrarOuFecharJanela()">
+        
+    </div>
+
+    <script>
+        let janelaQuebrada = false;
+
+        function abrirJanela() {
+            if (!janelaQuebrada) {
+                let janela = document.getElementById('janela');
+                let status = document.getElementById('status');
+                janela.style.backgroundImage = "url('janela_aberta.png')";
+                status.textContent = 'Janela Aberta';
+            }
+        }
+
+        function fecharJanela() {
+            if (!janelaQuebrada) {
+                let janela = document.getElementById('janela');
+                let status = document.getElementById('status');
+                janela.style.backgroundImage = "url('janela_fechada.png')";
+                status.textContent = 'Janela Fechada';
+            }
+        }
+
+        function quebrarOuFecharJanela() {
+            let janela = document.getElementById('janela');
+            let status = document.getElementById('status');
+            
+            if (janelaQuebrada) {
+                
+                janela.style.backgroundImage = "url('janela_fechada.png')";
+                status.textContent = 'Janela Fechada';
+                janelaQuebrada = false;
+            } else {
+                
+                janela.style.backgroundImage = "url('janela_quebrada.png')";
+                status.textContent = 'Janela Quebrada';
+                janelaQuebrada = true;
+            }
+        }
+    </script>
+</body>
+</html>
