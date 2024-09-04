@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Classe Retângulo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #007BFF;
+        }
+        p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Área do Retângulo</h1>
+    <p id="resultado"></p>
+
+    <script>
+        class Retangulo {
+            constructor(base, altura) {
+                this.base = base;
+                this.altura = altura;
+            }
+
+            calcularArea() {
+                return this.base * this.altura;
+            }
+        }
+
+        // Criando um objeto da classe Retangulo
+        const retangulo = new Retangulo(5, 10);
+
+        // Calculando a área
+        const area = retangulo.calcularArea();
+
+        // Exibindo o resultado na página
+        document.getElementById('resultado').textContent = `A área do retângulo é ${area} unidades quadradas.`;
+    </script>
+</body>
+</html>

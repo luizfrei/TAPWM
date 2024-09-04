@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Contas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #007BFF;
+        }
+        p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .container {
+            margin-top: 20px;
+            text-align: left;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exemplo de Contas Bancárias</h1>
+    <div class="container">
+        <p id="contaCorrente"></p>
+        <p id="contaPoupanca"></p>
+    </div>
+
+    <script>
+        // Classe base Conta
+        class Conta {
+            constructor(nome, correntista, numeroConta, saldo) {
+                this._nome = nome;
+                this._correntista = correntista;
+                this._numeroConta = numeroConta;
+                this._saldo = saldo;
+            }
+
+            // Getters e Setters
+            get nome() {
+                return this._nome;
+            }
+            set nome(valor) {
+                this._nome = valor;
+            }
+
+            get correntista() {
+                return this._correntista;
+            }
+            set correntista(valor) {
+                this._correntista = valor;
+            }
+
+            get numeroConta() {
+                return this._numeroConta;
+            }
+            set numeroConta(valor) {
+                this._numeroConta = valor;
+            }
+
+            get saldo() {
+                return this._saldo;
+            }
+            set saldo(valor) {
+                this._saldo = valor;
+            }
+
+            // Método para exibir informações
+            exibirDados() {
+                return `Nome: ${this._nome}, Correntista: ${this._correntista}, Número da Conta: ${this._numeroConta}, Saldo: R$ ${this._saldo.toFixed(2)}`;
+            }
+        }
+
+        // Classe Corrente (herda de Conta)
+        class Corrente extends Conta {
+            constructor(nome, correntista, numeroConta, saldo, saldoEspecial) {
+                super(nome, correntista, numeroConta, saldo);
+                this._saldoEspecial = saldoEspecial;
+            }
+
+            // Getter e Setter para saldoEspecial
+            get saldoEspecial() {
+                return this._saldoEspecial;
+            }
+            set saldoEspecial(valor) {
+                this._saldoEspecial = valor;
+            }
+
+            // Método para exibir informações
+            exibirDados() {
+                return `${super.exibirDados()}, Saldo Especial: R$ ${this._saldoEspecial.toFixed(2)}`;
+            }
+        }
+
+        // Classe Poupanca (herda de Conta)
+        class Poupanca extends Conta {
+            constructor(nome, correntista, numeroConta, saldo, juros, dataVencimento) {
+                super(nome, correntista, numeroConta, saldo);
+                this._juros = juros;
+                this._dataVencimento = dataVencimento;
+            }
+
+            // Getters e Setters para juros e dataVencimento
+            get juros() {
+                return this._juros;
+            }
+            set juros(valor) {
+                this._juros = valor;
+            }
+
+            get dataVencimento() {
+                return this._dataVencimento;
+            }
+            set dataVencimento(valor) {
+                this._dataVencimento = valor;
+            }
+
+            // Método para exibir informações
+            exibirDados() {
+                return `${super.exibirDados()}, Juros: ${this._juros.toFixed(2)}%, Data de Vencimento: ${this._dataVencimento}`;
+            }
+        }
+
+        // Criando objetos das classes Corrente e Poupanca
+        const contaCorrente = new Corrente('João Silva', 'João', '12345-6', 1500.00, 500.00);
+        const contaPoupanca = new Poupanca('Maria Oliveira', 'Maria', '65432-1', 2000.00, 2.5, '2024-12-31');
+
+        // Exibindo os dados na página
+        document.getElementById('contaCorrente').textContent = `Conta Corrente: ${contaCorrente.exibirDados()}`;
+        document.getElementById('contaPoupanca').textContent = `Conta Poupança: ${contaPoupanca.exibirDados()}`;
+    </script>
+</body>
+</html>
