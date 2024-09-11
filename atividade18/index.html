@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 18</title>
+    <script src="java.js" defer></script>
+    <style>
+        /* Resetando margens e preenchimentos padrão */
+        body, h1, h2, h3, h4, h5, h6, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Definindo uma fonte padrão e uma cor de fundo clara */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        /* Estilizando o formulário */
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px; /* Aumentei o raio do canto para um visual mais suave */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ajustei o sombreamento para um efeito mais sutil */
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Estilizando os rótulos */
+        label {
+            display: block;
+            margin-bottom: 8px; /* Aumentei o espaço abaixo dos rótulos */
+            font-weight: bold;
+        }
+
+        /* Estilizando os campos de entrada e o textarea */
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px; /* Aumentei o preenchimento para mais conforto */
+            border: 1px solid #ccc;
+            border-radius: 4px; /* Ajustei o raio do canto */
+            box-sizing: border-box;
+            font-size: 16px; /* Adicionei um tamanho de fonte padrão */
+        }
+
+        /* Estilizando o botão de envio */
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 12px 24px; /* Aumentei o preenchimento para um botão mais visível */
+            border-radius: 4px; /* Ajustei o raio do canto */
+            cursor: pointer;
+            font-size: 18px; /* Aumentei o tamanho da fonte para melhor legibilidade */
+            transition: background-color 0.3s ease; /* Adicionei uma transição suave para a cor de fundo */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilizando o campo de radio buttons */
+        fieldset {
+            border: 1px solid #ddd; /* Ajustei a cor da borda para um tom mais suave */
+            padding: 15px; /* Aumentei o preenchimento */
+            border-radius: 4px; /* Ajustei o raio do canto */
+            margin-bottom: 15px; /* Adicionei uma margem inferior */
+        }
+
+        legend {
+            font-weight: bold;
+            font-size: 18px; /* Aumentei o tamanho da fonte para destaque */
+        }
+    </style>
+</head>
+<body>
+    <form name="nomeform" onsubmit="return validarForm()">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="comentario">Comentário:</label>
+        <textarea id="comentario" name="comentario"></textarea><br><br>
+
+        <fieldset>
+            <legend>Pesquisa:</legend>
+            <input type="radio" id="sim" name="pesquisa" value="sim">
+            <label for="sim">Sim</label>
+            <input type="radio" id="nao" name="pesquisa" value="nao">
+            <label for="nao">Não</label>
+        </fieldset><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
