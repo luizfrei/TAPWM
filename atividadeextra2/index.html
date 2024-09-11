@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção de Cursos</title>
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Escolha um Curso</h1>
+    <select id="courseSelect" onchange="handleCourseSelection()">
+        <option value="">Selecione um curso</option>
+        <option value="curso1">Curso de JavaScript</option>
+        <option value="curso2">Curso de Python</option>
+        <option value="curso3">Curso de HTML & CSS</option>
+    </select>
+</body>
+</html>
