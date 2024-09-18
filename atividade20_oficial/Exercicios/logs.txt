@@ -1,0 +1,73 @@
+Microsoft Windows [versão 10.0.19045.4894]
+(c) Microsoft Corporation. Todos os direitos reservados.
+
+C:\Users\0031432412016>cd ..
+
+C:\Users>cd ..
+
+C:\>md Pwebnode16
+
+C:\>cd Pwebnode16
+
+C:\Pwebnode16>md Exercicios
+
+C:\Pwebnode16>cd Exercicos
+O sistema não pode encontrar o caminho especificado.
+
+C:\Pwebnode16>cd Exercicios
+
+C:\Pwebnode16\Exercicios>code .
+
+C:\Pwebnode16\Exercicios>node -v
+v17.9.1
+
+C:\Pwebnode16\Exercicios>node primeiro.js
+Primeiro exemplo
+
+C:\Pwebnode16\Exercicios>node segundoS.js
+1
+2
+3
+
+C:\Pwebnode16\Exercicios>node segundoA.js
+1
+3
+2
+
+C:\Pwebnode16\Exercicios>node terceiro.js 1 2 3 4 5 6 7 8 9 10 11
+soma=66
+
+C:\Pwebnode16\Exercicios>1 2 3 4 5 6 7 8 9 10 11
+'1' não é reconhecido como um comando interno
+ou externo, um programa operável ou um arquivo em lotes.
+
+C:\Pwebnode16\Exercicios>node terceiro.js 1 2 3 4 5 6 7 8 9 10 11
+soma= 66
+
+C:\Pwebnode16\Exercicios>node terceiro.js 1 2 3 4 5 6 7 8 9 10 11
+Soma = 66
+
+C:\Pwebnode16\Exercicios>node quartoS.js
+Sorocaba
+São Paulo
+Belo Horizonte
+Brasília
+Salvador
+
+
+C:\Pwebnode16\Exercicios>npm install prompt-sync
+npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+
+added 3 packages, and audited 4 packages in 894ms
+
+found 0 vulnerabilities
+
+C:\Pwebnode16\Exercicios>node callback1.js
+Digite seu nome: Jose
+OiJose
+
+C:\Pwebnode16\Exercicios>node callback1.js
+Digite seu nome: Jose
+Oi Jose!
+
+C:\Pwebnode16\Exercicios>
